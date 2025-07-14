@@ -1,4 +1,5 @@
 // script.js
+
 const materias = [
   // Trimestre I
   { nombre: "Contabilidad 1", requisitos: [], abre: ["Contabilidad 2", "Fundamentos de Auditoría"] },
@@ -90,52 +91,3 @@ const materias = [
   { nombre: "Pasantias", requisitos: [], creditos: 120 },
   { nombre: "Defensa de TG", requisitos: ["Taller de trabajo de grado FACES"], abre: [] },
 ];
-
-let creditos = 0;
-let aprobadas = new Set();
-
-function actualizarEstadisticas() {
-  document.getElementById("creditos").innerText = creditos;
-  document.getElementById("aprobadas").innerText = aprobadas.size;
-  document.getElementById("pendientes").innerText = materias.length - aprobadas.size;
-}
-
-function puedeAprobar(materia) {
-  if (aprobadas.has(materia.nombre)) return false;
-  const requisitosCumplidos = materia.requisitos ? materia.requisitos.every(req => aprobadas.has(req)) : true;
-  const creditosMinimos = materia.creditos ? creditos >= materia.creditos : true;
-  return requisitosCumplidos && creditosMinimos;
-}
-
-function render() {
-  const container = document.getElementById("grid-container");
-  container.innerHTML = "";
-
-  materias.forEach(materia => {
-    const div = document.createElement("div");
-    div.className = "asignatura";
-    div.innerHTML = `<h3>${materia.nombre}</h3><small>${materia.requisitos.length ? "Requiere: " + materia.requisitos.join(", ") : (materia.creditos ? "Requiere: " + materia.creditos + " créditos" : "Sin requisitos")}</small>`;
-
-    if (aprobadas.has(materia.nombre)) {
-      div.classList.add("aprobada");
-    } else if (!puedeAprobar(materia)) {
-      div.classList.add("bloqueada");
-    }
-
-    div.addEventListener("click", () => {
-      if (aprobadas.has(materia.nombre)) return;
-      if (puedeAprobar(materia)) {
-        aprobadas.add(materia.nombre);
-        creditos += 3;
-        render();
-        actualizarEstadisticas();
-      }
-    });
-
-    container.appendChild(div);
-  });
-
-  actualizarEstadisticas();
-}
-
-render();

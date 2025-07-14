@@ -1,1 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #eef6fb;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: #003366;
+}
 
+h1 {
+  color: #00509e;
+  margin-bottom: 10px;
+}
+
+.stats {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #003366;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.asignatura {
+  background-color: #cce0f5;
+  border: 2px solid #00509e;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.asignatura:hover {
+  background-color: #b0d0f0;
+  transform: scale(1.02);
+}
+
+.asignatura.aprobada {
+  background-color: #a3d977;
+  border-color: #6ba54a;
+  color: #244812;
+}
+
+.asignatura.bloqueada {
+  background-color: #e0e0e0;
+  border-color: #999;
+  color: #777;
+  cursor: not-allowed;
+}
+
+.asignatura h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.asignatura small {
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 5px;
+  color: #00509e;
+}

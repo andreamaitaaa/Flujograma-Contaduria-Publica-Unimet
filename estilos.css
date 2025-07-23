@@ -1,93 +1,24 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #eef6fb;
-  margin: 0;
-  padding: 20px;
-  color: #003366;
-  text-align: center;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Interactiva - Andrea</title>
+  <link rel="stylesheet" href="estilos.css"/>
+</head>
+<body>
+  <h1>Malla Interactiva de Andrea</h1>
+  <div class="resumen">
+    <p>Total de materias: <span id="total">0</span></p>
+    <p>Aprobadas: <span id="aprobadas">0</span></p>
+    <p>Faltantes: <span id="faltantes">0</span></p>
+    <p>Créditos aprobados: <span id="creditos">0</span></p>
+  </div>
 
-h1 {
-  color: #00509e;
-  margin-bottom: 10px;
-}
+  <div class="malla" id="malla">
+    <!-- Aquí se cargan las materias automáticamente -->
+  </div>
 
-.stats {
-  margin-bottom: 30px;
-  font-size: 1.2rem;
-}
-
-.flujo-container {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding: 10px;
-  gap: 20px;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.trimestre {
-  min-width: 250px;
-  background-color: #ffffff;
-  border: 2px solid #00509e;
-  border-radius: 8px;
-  padding: 10px;
-  flex-shrink: 0;
-}
-
-.trimestre h2 {
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0 0 10px 0;
-  text-align: center;
-  color: #003366;
-  background-color: #cce0f5;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.grid {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.asignatura {
-  background-color: #cce0f5;
-  border: 2px solid #00509e;
-  border-radius: 8px;
-  padding: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.1s ease;
-}
-
-.asignatura:hover {
-  background-color: #b0d0f0;
-  transform: scale(1.02);
-}
-
-.asignatura.aprobada {
-  background-color: #a3d977;
-  border-color: #6ba54a;
-  color: #244812;
-}
-
-.asignatura.bloqueada {
-  background-color: #e0e0e0;
-  border-color: #999;
-  color: #777;
-  cursor: not-allowed;
-}
-
-.asignatura h3 {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.asignatura small {
-  font-size: 0.8rem;
-  display: block;
-  margin-top: 5px;
-  color: #00509e;
-}
+  <script src="script.js"></script>
+</body>
+</html>

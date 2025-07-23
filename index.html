@@ -2,33 +2,21 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Malla Interactiva</title>
-  <link rel="stylesheet" href="estilos.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Interactiva - Andrea</title>
+  <link rel="stylesheet" href="estilos.css"/>
 </head>
 <body>
-  <h1>Malla Interactiva de Contaduría Pública</h1>
-
-  <div class="stats">
-    <p><strong>Créditos acumulados:</strong> <span id="creditos">0</span></p>
-    <p><strong>Asignaturas aprobadas:</strong> <span id="aprobadas">0</span></p>
-    <p><strong>Asignaturas pendientes:</strong> <span id="pendientes">60</span></p>
+  <h1>Malla Interactiva de Andrea</h1>
+  <div class="resumen">
+    <p>Total de materias: <span id="total">0</span></p>
+    <p>Aprobadas: <span id="aprobadas">0</span></p>
+    <p>Faltantes: <span id="faltantes">0</span></p>
+    <p>Créditos aprobados: <span id="creditos">0</span></p>
   </div>
 
-  <div class="flujo-container">
-    <div class="trimestre"><h2>Trimestre I</h2><div class="grid" id="trim1"></div></div>
-    <div class="trimestre"><h2>Trimestre II</h2><div class="grid" id="trim2"></div></div>
-    <div class="trimestre"><h2>Trimestre III</h2><div class="grid" id="trim3"></div></div>
-    <div class="trimestre"><h2>Trimestre IV</h2><div class="grid" id="trim4"></div></div>
-    <div class="trimestre"><h2>Trimestre V</h2><div class="grid" id="trim5"></div></div>
-    <div class="trimestre"><h2>Trimestre VI</h2><div class="grid" id="trim6"></div></div>
-    <div class="trimestre"><h2>Trimestre VII</h2><div class="grid" id="trim7"></div></div>
-    <div class="trimestre"><h2>Trimestre VIII</h2><div class="grid" id="trim8"></div></div>
-    <div class="trimestre"><h2>Trimestre IX</h2><div class="grid" id="trim9"></div></div>
-    <div class="trimestre"><h2>Trimestre X</h2><div class="grid" id="trim10"></div></div>
-    <div class="trimestre"><h2>Trimestre XI</h2><div class="grid" id="trim11"></div></div>
-    <div class="trimestre"><h2>Trimestre XII</h2><div class="grid" id="trim12"></div></div>
-    <div class="trimestre"><h2>Requisitos Adicionales</h2><div class="grid" id="extras"></div></div>
+  <div class="malla" id="malla">
+    <!-- Aquí se cargan las materias automáticamente -->
   </div>
 
   <script src="script.js"></script>
